@@ -12,7 +12,8 @@ I'm not goint to go into details abot how to create an app and get all the necce
   Description: Get guild data  
   • method: `GET`  
   • requiers oauth: `TRUE`  
-  • scope required: `READ`  
+  • scope required: `READ` 
+  • returns (CODE): `200 OK`  
   • returns (JSON):  
   
   ```json
@@ -41,6 +42,7 @@ I'm not goint to go into details abot how to create an app and get all the necce
   • method: `GET`  
   • requiers oauth: `TRUE`  
   • scope required: `READ`  
+  • returns (CODE): `200 OK`  
   • returns (JSON):  
   
   ```json
@@ -93,6 +95,7 @@ I'm not goint to go into details abot how to create an app and get all the necce
   • method: `GET`  
   • requiers oauth: `TRUE`  
   • scope required: `READ`  
+  • returns (CODE): `200 OK`  
   • returns (JSON):  
   
   ```json
@@ -136,6 +139,7 @@ I'm not goint to go into details abot how to create an app and get all the necce
   • method: `GET`  
   • requiers oauth: `TRUE`  
   • scope required: `READ`  
+  • returns (CODE): `200 OK`  
   • returns (JSON):  
   
   ```json
@@ -175,10 +179,12 @@ I'm not goint to go into details abot how to create an app and get all the necce
 ### BOARDS(guilds) API
 <hr>
 
-### `/api/board_available/<name>`
+### `/api/v1/board_available/<name>`
   Description: Check if guild name is available    
   • method: `GET`  
-  • requiers oauth: `FALSE`    
+  • requiers oauth: `TRUE`
+  • scope required: `NONE`   
+  • returns (CODE): `200 OK`  
   • returns (JSON):  
   
   ```json
@@ -190,6 +196,7 @@ I'm not goint to go into details abot how to create an app and get all the necce
   • method: `GET`  
   • requiers oauth: `TRUE`  
   • scope required: `READ`  
+  • returns (CODE): `200 OK`  
   • returns (JSON):  
   
   ```json
@@ -390,4 +397,480 @@ I'm not goint to go into details abot how to create an app and get all the necce
 }
 ```
 
-###
+### `/api/v1/guild/<boardname>/comments`
+  Description: Get guild comments    
+  • method: `GET`  
+  • requiers oauth: `TRUE`  
+  • scope required: `READ`  
+  • parameters:   
+    - `page`    
+  • returns (CODE): `200 OK`  
+  • returns (JSON):  
+  
+  ```json
+  {
+    "data": [{
+        "author": "kek",
+        "body": "![](https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif)",
+        "body_html": "<p><a data-target=\"#expandImageModal\" data-toggle=\"modal\" href=\"https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif\" onclick=\"expandDesktopImage('https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif');\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"in-comment-image rounded-sm my-2\" rel=\"nofollow\" src=\"https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif\" style=\"max-height: 100px; max-width: 100%;\"/></a></p>\n",
+        "created_utc": 1599159249,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a7al",
+        "guild_name": "RuqqusAPI",
+        "id": "a7al",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2xv6",
+        "permalink": "/post/2xv6/native-app-test-post/a7al",
+        "post": "2xv6",
+        "score": 3,
+        "title": {
+            "color": "#5555dd",
+            "id": 5,
+            "kind": 3,
+            "text": " the Codesmith"
+        },
+        "upvotes": 3
+    }, {
+        "author": "acikek",
+        "body": "test reply",
+        "body_html": "<p>test reply</p>\n",
+        "created_utc": 1599158279,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a787",
+        "guild_name": "RuqqusAPI",
+        "id": "a787",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 2,
+        "parent": "t3_a76v",
+        "permalink": "/post/2wrn/this-is-a-test-post/a787",
+        "post": "2wrn",
+        "score": 1,
+        "title": {
+            "color": "#aa8855",
+            "id": 12,
+            "kind": 1,
+            "text": ", Guildmaster"
+        },
+        "upvotes": 1
+    }, {
+        "author": "acikek",
+        "body": "test comment",
+        "body_html": "<p>test comment</p>\n",
+        "created_utc": 1599157624,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a76v",
+        "guild_name": "RuqqusAPI",
+        "id": "a76v",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2wrn",
+        "permalink": "/post/2wrn/this-is-a-test-post/a76v",
+        "post": "2wrn",
+        "score": 1,
+        "title": {
+            "color": "#aa8855",
+            "id": 12,
+            "kind": 1,
+            "text": ", Guildmaster"
+        },
+        "upvotes": 1
+    }, {
+        "author": "wuzizname",
+        "body": "Hellllloooooo?!?!?",
+        "body_html": "<p>Hellllloooooo?!?!?</p>\n",
+        "created_utc": 1599156821,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a74x",
+        "guild_name": "RuqqusAPI",
+        "id": "a74x",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2xue",
+        "permalink": "/post/2xue/test/a74x",
+        "post": "2xue",
+        "score": 1,
+        "title": null,
+        "upvotes": 1
+    }, {
+        "author": "foreverzer0",
+        "body": "I guess I should have clarified the word \"that\" was referring to the commits on git xD",
+        "body_html": "<p>I guess I should have clarified the word \"that\" was referring to the commits on git xD</p>\n",
+        "created_utc": 1599151387,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a6un",
+        "guild_name": "RuqqusAPI",
+        "id": "a6un",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 4,
+        "parent": "t3_a6td",
+        "permalink": "/post/2xgo/is-the-apis-postcomment-voting-broken/a6un",
+        "post": "2xgo",
+        "score": 2,
+        "title": {
+            "color": "#5555dd",
+            "id": 22,
+            "kind": 1,
+            "text": " the Likeable"
+        },
+        "upvotes": 2
+    }, {
+        "author": "Seq37",
+        "body": "BREAKING: @captainmeta4 fixes Ruqqus just by looking at it",
+        "body_html": "<p>BREAKING: <a href=\"/@captainmeta4\"><img class=\"profile-pic-20 mr-1\" src=\"/@captainmeta4/pic/profile\"/>@captainmeta4</a> fixes Ruqqus just by looking at it</p>\n",
+        "created_utc": 1599150894,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a6td",
+        "guild_name": "RuqqusAPI",
+        "id": "a6td",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 3,
+        "parent": "t3_a6qy",
+        "permalink": "/post/2xgo/is-the-apis-postcomment-voting-broken/a6td",
+        "post": "2xgo",
+        "score": 4,
+        "title": {
+            "color": "#dd5555",
+            "id": 4,
+            "kind": 3,
+            "text": ", Breaker of Ruqqus"
+        },
+        "upvotes": 4
+    }, {
+        "author": "foreverzer0",
+        "body": "That fixed it, thank you much. :)",
+        "body_html": "<p>That fixed it, thank you much. :)</p>\n",
+        "created_utc": 1599149962,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a6qy",
+        "guild_name": "RuqqusAPI",
+        "id": "a6qy",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 2,
+        "parent": "t3_a5y0",
+        "permalink": "/post/2xgo/is-the-apis-postcomment-voting-broken/a6qy",
+        "post": "2xgo",
+        "score": 3,
+        "title": {
+            "color": "#5555dd",
+            "id": 22,
+            "kind": 1,
+            "text": " the Likeable"
+        },
+        "upvotes": 3
+    }, {
+        "author": "captainmeta4",
+        "body": "I'll take a look in a bit.",
+        "body_html": "<p>I'll take a look in a bit.</p>\n",
+        "created_utc": 1599133202,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a5y0",
+        "guild_name": "RuqqusAPI",
+        "id": "a5y0",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2xgo",
+        "permalink": "/post/2xgo/is-the-apis-postcomment-voting-broken/a5y0",
+        "post": "2xgo",
+        "score": 5,
+        "title": {
+            "color": "#5555dd",
+            "id": 5,
+            "kind": 3,
+            "text": " the Codesmith"
+        },
+        "upvotes": 5
+    }, {
+        "author": "foreverzer0",
+        "body": "If your developing for desktop use, you can literally just make it up, so long as it is a valid URI. You only need to intercept the response and be able to grab the target the URL it attempting to redirect to, which contains the `code` parameter. If it is a fabricated URI or scheme, you can still get the information you need when it inevitably fails. \n\nYes, using oauth sucks and is a pain in the ass, especially for those of use who don't do a lot of web-development (include myself in that group).",
+        "body_html": "<p>If your developing for desktop use, you can literally just make it up, so long as it is a valid URI. You only need to intercept the response and be able to grab the target the URL it attempting to redirect to, which contains the <code>code</code> parameter. If it is a fabricated URI or scheme, you can still get the information you need when it inevitably fails.</p>\n<p>Yes, using oauth sucks and is a pain in the ass, especially for those of use who don't do a lot of web-development (include myself in that group).</p>\n",
+        "created_utc": 1599109893,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a5bj",
+        "guild_name": "RuqqusAPI",
+        "id": "a5bj",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 2,
+        "parent": "t3_a3kb",
+        "permalink": "/post/2v0b/how-to-get-started-using-ruqqus/a5bj",
+        "post": "2v0b",
+        "score": 2,
+        "title": {
+            "color": "#5555dd",
+            "id": 22,
+            "kind": 1,
+            "text": " the Likeable"
+        },
+        "upvotes": 2
+    }, {
+        "author": "kek",
+        "body": "Good bot",
+        "body_html": "<p>Good bot</p>\n",
+        "created_utc": 1599077272,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a3td",
+        "guild_name": "RuqqusAPI",
+        "id": "a3td",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2wrn",
+        "permalink": "/post/2wrn/this-is-a-test-post/a3td",
+        "post": "2wrn",
+        "score": 4,
+        "title": {
+            "color": "#5555dd",
+            "id": 5,
+            "kind": 3,
+            "text": " the Codesmith"
+        },
+        "upvotes": 4
+    }, {
+        "author": "movie",
+        "body": "Nice",
+        "body_html": "<p>Nice</p>\n",
+        "created_utc": 1599077264,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a3tc",
+        "guild_name": "RuqqusAPI",
+        "id": "a3tc",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2wrn",
+        "permalink": "/post/2wrn/this-is-a-test-post/a3tc",
+        "post": "2wrn",
+        "score": 1,
+        "title": {
+            "color": "#5555dd",
+            "id": 21,
+            "kind": 1,
+            "text": " the Friendly"
+        },
+        "upvotes": 1
+    }, {
+        "author": "movie",
+        "body": "URI is what goes in front of the domain  \ne.g. http, https...  \nYou can use custom uri scheme in your redirect uri  \n\nFor example:  \nporpl://customreturnuri.com\n\nWhen the user authorizes your app, redirect url will be sent to the url you provided and it will include `code` and `state` parameters: \n\n porpl://customrturnuri.com?code=thecode&state=state_you_provided_in_step2  \n\nCustom uri's are useful when you are making an app and need to catch that redirect outside of the browser  \n\nIf you are making a bot it's better to use https and just wait for GET request from ruqqus on your side",
+        "body_html": "<p>URI is what goes in front of the domain<br/>\ne.g. http, https...<br/>\nYou can use custom uri scheme in your redirect uri</p>\n<p>For example:<br/>\nporpl://<a href=\"https://customreturnuri.com\" rel=\"nofollow noopener\" target=\"_blank\">customreturnuri.com</a></p>\n<p>When the user authorizes your app, redirect url will be sent to the url you provided and it will include <code>code</code> and <code>state</code> parameters:</p>\n<p>porpl://<a href=\"https://customrturnuri.com?code=thecode&amp;state=state_you_provided_in_step2\" rel=\"nofollow noopener\" target=\"_blank\">customrturnuri.com?code=thecode&amp;state=state_you_provided_in_step2</a></p>\n<p>Custom uri's are useful when you are making an app and need to catch that redirect outside of the browser</p>\n<p>If you are making a bot it's better to use https and just wait for GET request from ruqqus on your side</p>\n",
+        "created_utc": 1599073953,
+        "downvotes": 0,
+        "edited_utc": 1599074071,
+        "fullname": "t3_a3n0",
+        "guild_name": "RuqqusAPI",
+        "id": "a3n0",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 2,
+        "parent": "t3_a3kb",
+        "permalink": "/post/2v0b/how-to-get-started-using-ruqqus/a3n0",
+        "post": "2v0b",
+        "score": 2,
+        "title": {
+            "color": "#5555dd",
+            "id": 21,
+            "kind": 1,
+            "text": " the Friendly"
+        },
+        "upvotes": 2
+    }, {
+        "author": "longpostbot",
+        "body": "What the heck is URI and what do I put down for that in my API request?",
+        "body_html": "<p>What the heck is URI and what do I put down for that in my API request?</p>\n",
+        "created_utc": 1599072823,
+        "downvotes": 0,
+        "edited_utc": 0,
+        "fullname": "t3_a3kb",
+        "guild_name": "RuqqusAPI",
+        "id": "a3kb",
+        "is_archived": false,
+        "is_banned": false,
+        "is_deleted": false,
+        "is_nsfl": false,
+        "is_nsfw": false,
+        "is_offensive": false,
+        "level": 1,
+        "parent": "t2_2v0b",
+        "permalink": "/post/2v0b/how-to-get-started-using-ruqqus/a3kb",
+        "post": "2v0b",
+        "score": 1,
+        "title": {
+            "color": "#aaaa22",
+            "id": 6,
+            "kind": 4,
+            "text": ", Early Adopter"
+        },
+        "upvotes": 1
+    }]
+}
+
+```
+
+## COMMENTS API  
+
+### `/api/v1/post/<p_id>/comment/<c_id>`  
+  Description: Get comment data    
+  • method: `GET`  
+  • requiers oauth: `TRUE`  
+  • scope required: `READ`  
+  • parameters:   
+  &nbsp;&nbsp;- `sort` for sorting children comments    
+      &nbsp;&nbsp;&nbsp;&nbsp;- `hot`      
+      &nbsp;&nbsp;&nbsp;&nbsp;- `op`    
+      &nbsp;&nbsp;&nbsp;&nbsp;- `new`    
+      &nbsp;&nbsp;&nbsp;&nbsp;- `disputed`      
+      &nbsp;&nbsp;&nbsp;&nbsp;- `random`      
+  • returns (CODE): `200 OK`   
+  • returns (JSON):  
+  
+  ```json
+  
+  
+  {
+    "author": "kek",
+    "body": "![](https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif)",
+    "body_html": "<p><a data-target=\"#expandImageModal\" data-toggle=\"modal\" href=\"https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif\" onclick=\"expandDesktopImage('https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif');\" rel=\"nofollow noopener\" target=\"_blank\"><img class=\"in-comment-image rounded-sm my-2\" rel=\"nofollow\" src=\"https://media.giphy.com/media/14udF3WUwwGMaA/100w.gif\" style=\"max-height: 100px; max-width: 100%;\"/></a></p>\n",
+    "created_utc": 1599159249,
+    "downvotes": 0,
+    "edited_utc": 0,
+    "fullname": "t3_a7al",
+    "guild_name": "RuqqusAPI",
+    "id": "a7al",
+    "is_archived": false,
+    "is_banned": false,
+    "is_deleted": false,
+    "is_nsfl": false,
+    "is_nsfw": false,
+    "is_offensive": false,
+    "level": 1,
+    "parent": "t2_2xv6",
+    "permalink": "/post/2xv6/native-app-test-post/a7al",
+    "post": "2xv6",
+    "score": 3,
+    "title": {
+        "color": "#5555dd",
+        "id": 5,
+        "kind": 3,
+        "text": " the Codesmith"
+    },
+    "upvotes": 3
+}
+```
+
+### `/api/v1/comment`
+  Description: Post a comment    
+  • method: `GET`  
+  • requiers oauth: `TRUE`  
+  • scope required: `CREATE`
+  • parameters:
+  &nbsp;&nbsp;- `submission` empty if parent is post, post id if parent is comment
+  &nbsp;&nbsp;- `parent_fullname` post or comment fullname
+  &nbsp;&nbsp;- `body` comment body/text
+  • returns (CODE): `200 OK`   
+  • returns (JSON):   
+  
+  ```json
+{
+    "author": "movie",
+    "body": "this is a test comment",
+    "body_html": "<p>this is a test comment</p>\n",
+    "created_utc": 1599228573,
+    "downvotes": 0,
+    "edited_utc": 0,
+    "fullname": "t3_aa8n",
+    "guild_name": "myrestrictedtestguild",
+    "id": "aa8n",
+    "is_archived": false,
+    "is_banned": false,
+    "is_deleted": false,
+    "is_nsfl": false,
+    "is_nsfw": false,
+    "is_offensive": false,
+    "level": 2,
+    "parent": "t3_a6dh",
+    "permalink": "/post/2xmj/just-testing-api/aa8n",
+    "post": "2xmj",
+    "score": 1,
+    "title": {
+        "color": "#5555dd",
+        "id": 21,
+        "kind": 1,
+        "text": " the Friendly"
+    },
+    "upvotes": 1
+}
+```
+
+### `/api/v1/delete/comment/<cid>`
+  Description: Get comment data
+  • method: `GET`
+  • requiers oauth: `TRUE`
+  • scope required: `DELETE`
+  • returns (CODE): `204 (NO CONTENT)`
