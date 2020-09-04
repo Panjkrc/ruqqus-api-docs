@@ -12,7 +12,7 @@ I'm not goint to go into details abot how to create an app and get all the necce
   Description: Get guild data  
   • method: `GET`  
   • requiers oauth: `TRUE`  
-  • scope required: `READ` 
+  • scope required: `READ`  
   • returns (CODE): `200 OK`  
   • returns (JSON):  
   
@@ -826,15 +826,15 @@ I'm not goint to go into details abot how to create an app and get all the necce
 
 ### `/api/v1/comment`
   Description: Post a comment    
-  • method: `GET`  
-  • requiers oauth: `TRUE`  
-  • scope required: `CREATE`
-  • parameters:
-  &nbsp;&nbsp;- `submission` empty if parent is post, post id if parent is comment
-  &nbsp;&nbsp;- `parent_fullname` post or comment fullname
-  &nbsp;&nbsp;- `body` comment body/text
-  • returns (CODE): `200 OK`   
-  • returns (JSON):   
+  • method: `GET`     
+  • requiers oauth: `TRUE`     
+  • scope required: `CREATE`   
+  • parameters:    
+  &nbsp;&nbsp;- `submission` empty if parent is post, post id if parent is comment    
+  &nbsp;&nbsp;- `parent_fullname` post or comment fullname    
+  &nbsp;&nbsp;- `body` comment body/text    
+  • returns (CODE): `200 OK`     
+  • returns (JSON):      
   
   ```json
 {
@@ -868,9 +868,9 @@ I'm not goint to go into details abot how to create an app and get all the necce
 }
 ```
 
-### `/api/v1/delete/comment/<cid>`
-  Description: Get comment data
-  • method: `GET`
-  • requiers oauth: `TRUE`
-  • scope required: `DELETE`
-  • returns (CODE): `204 (NO CONTENT)`
+### `/api/v1/delete/comment/<cid>`  
+  Description: Get comment data  
+  • method: `GET`  
+  • requiers oauth: `TRUE`  
+  • scope required: `DELETE`  
+  • returns (CODE): `204 (NO CONTENT)`  
